@@ -42,5 +42,5 @@ Well, there is NO installation. Well you need a few reqirements.
 Download the files from the [Releases Page.](https://github.com/TigerIS12024/TWCRundown/releases/tag/Scrolls)
 
 > [!IMPORTANT]
-> If you have any issues with this project, go to the "Issues' tab annd report it, and i will get back to you as soon as i can.
+> If you have any issues with this project, go to the "Issues' tab and report it, and i will get back to you as soon as i can.
 
