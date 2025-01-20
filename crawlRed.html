@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    @font-face{
+      font-family:AkkoLight;
+      src:url(./Akko-Light.woff2) format("woff2")
+    }
+    @font-face {
+      font-family: "Tungsten-Medium";
+      src: url("./Tungsten-Medium.woff2") format("woff2");
+      font-weight: normal;
+      font-style: normal;
+    }
+    * {
+      box-sizing: border-box;
+    }
+    html, body {
+      margin: 0;
+      height: 100%;
+      width: 100%;
+      background: transparent;
+    }
+    p {
+      margin: 0;
+    }
+    #crawl {
+      color: #FFF;
+      background: #0A1014;
+      position: absolute;
+      
+      top: 863px;
+      right: 0;
+
+      height: 47px;
+      width: 1675px;
+
+      overflow: hidden;
+    }
+    #container {
+      display: flex;
+      position: relative;
+      left: 0;
+    }
+    .category {
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      height: 47px;
+      padding: 2px 10px;
+      background: #FFF;
+      color: #000;
+      position: relative;
+
+      font-size: 38px;
+      font-family: "Tungsten-Medium";
+      z-index: 10;
+    }
+    .headline-group {
+      display: flex;
+      flex-shrink: 0;
+      position: relative;
+    }
+    .headline {
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      padding: 5px 10px;
+
+      font-family: AkkoLight;
+      font-size: 30px;
+    }
+  </style>
+</head>
+<body>
+  <div id="crawl">
+    <div id="container"></div>
+  </div>
+  <script>
+
+    /*
+     * This is what you need to change
+     * Text in white boxes gets prefixed with #
+     * Anything after that goes after the box.
+     * You can also change the speed. I think 2 looks fine.
+     * You have to have atleast 2 crawls
+     */
+
+    const speed = 2;
+    const crawls = [
+      '#HELLO PORTLAND',
+      'hi',
+      '#HELLO PORTLAND',
+      'hi'
+    ];
+
+
+    let crawlIndex = 0;
+    const container = document.getElementById('container');
+    const elCrawl = document.getElementById('crawl');
+    const crawlLeftOffset = elCrawl.getBoundingClientRect().left;
+    const crawlRightOffset = elCrawl.getBoundingClientRect().right;
+
+    /*
+      Find out if the crawl fills the container
+    */
+    function isCrawlShort() {
+      let lastEl = document.querySelector("#container > div:last-child");
+      if (!lastEl) return true;
+      let rightStop = lastEl.getBoundingClientRect().right;
+      return rightStop < crawlRightOffset;
+    }
+
+    function loadCrawls() {
+
+      while (isCrawlShort()) {
+
+        let crawl = crawls[crawlIndex];
+        let isCategory = false;
+        let classes = '';
+
+        // Categories are prefixed with a #
+        if (crawl.substr(0, 1) === '#') {
+          crawl = crawl.substr(1);
+          isCategory = true;
+        }
+
+        let lastEl = document.querySelector("#container > *:last-child");
+
+        if (isCategory) {
+          container.innerHTML += `<div data-id='${crawlIndex}' class='category'>${crawl}</div>`;
+        } else if (!lastEl || lastEl.classList.contains("category")) {
+          container.innerHTML += `<div class='headline-group'><div data-id='${crawlIndex}' class='headline'>${crawl}</div></div>`;
+        } else if (lastEl.classList.contains("headline-group")) {
+          lastEl.innerHTML += `<div data-id='${crawlIndex}' class='headline'>${crawl}</div>`;
+        }
+
+        crawlIndex++;
+        if (crawlIndex+1 > crawls.length) {
+          crawlIndex = 0;
+        }
+
+      }
+
+    }
+
+    loadCrawls();
+
+    let pos = 0;
+    let activeCategory, activeCategoryPos = null, x;
+    let inCategory = false;
+    let upNextCategory = false;
+    let nextCategory;
+
+    function crawl() {
+      pos = pos - speed;
+      
+      // Detect if a category element is going out
+      activeCategory = document.querySelector("#container .category:first-child");
+      activeCategoryLeft = activeCategory.getBoundingClientRect().left;
+      activeCategoryRight = activeCategory.getBoundingClientRect().right;
+
+      if (activeCategoryPos == null) {
+        activeCategoryPos = activeCategory.offsetLeft;
+      }
+
+      let nextCategoryLeft = null;
+      if (nextCategory) {
+        nextCategoryLeft = document.querySelectorAll("#container > .category")[1].getBoundingClientRect().left;
+      }
+      
+      if (nextCategory && (nextCategoryLeft <= crawlLeftOffset)) {
+
+        // Once the next category hits the edge of the master container we reset again
+
+        pos = 0;
+        container.style.left = '0px';
+
+        // Remove anything to the left of the up next category
+        let temp = document.querySelectorAll("#container > .category")[1];
+        let sibling = temp.previousSibling;
+
+        while (sibling) {
+          sibling.remove();
+          sibling = temp.previousSibling;
+        }
+
+        upNextCategory = false;
+        inCategory = false;
+
+      } else if (nextCategory && (nextCategoryLeft <= activeCategoryRight)) {
+
+        // Next up category is hitting the right edge of the active category
+
+        if (!upNextCategory) {
+          console.log('Resetting pos = 0');
+          upNextCategory = true;
+          pos = 0;
+        }
+
+        // Scroll the parent container
+        container.style.left = pos + 'px';
+
+      } else if (activeCategoryLeft <= crawlLeftOffset) {
+
+        // Once a category hits the edge, reset pos to 0 and stop moving the container
+        if (!inCategory) {
+          console.log('Resetting pos = 0');
+          pos = 0;
+          inCategory = true;
+
+          // You can't do an :nth-child for this :(
+          nextCategory = document.querySelectorAll("#container > .category")[1];
+        }
+
+        // Move the headline group instead
+        activeCategory.nextSibling.style.marginLeft = pos + 'px';
+
+      } else {
+        container.style.left = pos + 'px';
+      }
+
+      loadCrawls();
+
+      requestAnimationFrame(crawl);
+    }
+
+    crawl();
+
+  </script>
+</body>
+</html>
