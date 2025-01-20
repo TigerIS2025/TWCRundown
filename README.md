@@ -5,6 +5,7 @@
 
 This repository focuses on The Weather Channels rundown used from November 2013 to August 2019. Before using, adding, modyfying or testing, please read the following information.
 
+# THESE FILES WERE SHARED BY A FAN. WE CANNOT SHARE THE NAME WHO GAVE IT TO US.
 You can set any amout of craws from 1 to 90. **VERY** higher numbers are NOT allowed. 
 
 You can add anything you want in the ``const crawls`` line, starting with a ``'`` and ending with a ``',`` at the end of the craw. Here is example:
