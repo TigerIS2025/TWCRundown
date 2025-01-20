@@ -35,12 +35,12 @@ Open the ``.html`` file in a fast graphics card computer for the best experience
 Well, there is NO installation. Well you need a few reqirements.
 
 - Computer with a GTX 1050 Graphics Card
-- Running a 64 Bit Operating System
-- and, that your conputer follows Part 15 of the FCC Rules. (OPTIONAL.)
+- and Running a 64 Bit Operating System
+  
 
 
 Download the files from the [Releases Page.](https://github.com/TigerIS12024/TWCRundown/releases/tag/Scrolls)
 
 > [!IMPORTANT]
-> If you have any issues with this project, go to the "Issues' tap annd report it, and i will get back to you as soon as i can.
+> If you have any issues with this project, go to the "Issues' tab annd report it, and i will get back to you as soon as i can.
 
