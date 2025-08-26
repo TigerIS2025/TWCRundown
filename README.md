@@ -45,6 +45,9 @@ Download the files from the [Releases Page.](https://github.com/TigerIS12024/TWC
 
 See the advanced version [here.](https://github.com/demonitize/TWCRundown)
 
+
+I want to thank TwistedWX for downloading this.
+
 > [!IMPORTANT]
 > If you have any issues with this project, go to the "Issues' tab and report it, and i will get back to you as soon as i can.
 
