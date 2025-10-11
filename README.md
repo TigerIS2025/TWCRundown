@@ -8,35 +8,26 @@ This repository focuses on The Weather Channels rundown used from November 2013 
 # THESE FILES WERE SHARED BY A FAN. WE CANNOT SHARE THE NAME WHO GAVE IT TO US.
 You can set any amout of craws from 1 to 90. **VERY** higher numbers are NOT allowed. 
 
-You can add anything you want in the ``const crawls`` line, starting with a ``'`` and ending with a ``',`` at the end of the craw. Here is example:
+As you edit yhe .html files, you can add anything you want in the ``const crawls`` line, starting with a ``'`` and ending with a ``',`` at the end of the craw. Here is example:
 ```
 'This is a Test',
 ```
 
-No ' at any craw feld, like this:
+However, do not use **backticks**  at any craw feld, here is an example of that.
 ```
 'This i's a test',
 ```
 This wil cause a syntax error causing the script to fail.
 
-If you want to add a block, add a ``#`` and type anything uppercase like:
+In fact, if you want to add a block, add a ``#`` and type anything uppercase like:
 
 ```
 '#THIS IS A TEST',
 ```
 
-Open the ``.html`` file in a fast graphics card computer for the best experience.
+Open the ``.html`` file **after you edited the HTML files to your liking.
 
 
-
-
-# How to install and run?
-
-Well, there is NO installation. Well you need a few reqirements.
-
-- Computer with a GTX 1050 Graphics Card
-- and Running a 64 Bit Operating System
-  
 
 
 Download the files from the [Releases Page.](https://github.com/TigerIS12024/TWCRundown/releases/tag/Scrolls)
