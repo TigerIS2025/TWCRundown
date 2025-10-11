@@ -25,7 +25,7 @@ In fact, if you want to add a block, add a ``#`` and type anything uppercase lik
 '#THIS IS A TEST',
 ```
 
-Open the ``.html`` file **after you edited the HTML files to your liking.
+Open the ``.html`` file **after you edited the HTML files to your liking.**
 
 
 
