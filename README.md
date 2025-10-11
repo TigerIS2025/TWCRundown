@@ -19,6 +19,17 @@ However, do not use **backticks**  at any craw feld, here is an example of that.
 ```
 This wil cause a syntax error causing the script to fail.
 
+If backticks are absoluteley necessary, do the following:
+
+- Open the craw or crawRed HTML files in a text editor like Notepad or TextEdit.
+- Find the line where it is causing the backtick.
+- Fix it by adding a slash **BEFORE** the backtick:
+```
+'You are watching SPCPortland/'s IntelliStar 2 xD.',
+```
+
+
+
 In fact, if you want to add a block, add a ``#`` and type anything uppercase like:
 
 ```
