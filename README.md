@@ -8,7 +8,7 @@ This repository focuses on The Weather Channels rundown used from November 2013 
 # THESE FILES WERE SHARED BY A FAN. WE CANNOT SHARE THE NAME WHO GAVE IT TO US.
 You can set any amout of craws from 1 to 90. **VERY** higher numbers are NOT allowed. 
 
-As you edit yhe .html files, you can add anything you want in the ``const crawls`` line, starting with a ``'`` and ending with a ``',`` at the end of the craw. Here is example:
+As you edit the .html files, you can add anything you want in the ``const crawls`` line, starting with a ``'`` and ending with a ``',`` at the end of the craw. Here is example:
 ```
 'This is a Test',
 ```
