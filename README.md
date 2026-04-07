@@ -47,6 +47,8 @@ Download the files from the [Releases Page.](https://github.com/TigerIS12024/TWC
 
 See the advanced version [here.](https://github.com/demonitize/TWCRundown)
 
+**NOTE:** the advanced version contains requirements that **you do not violate the Geneva Convention**. It has appeared on my end that the **Geneva Convention** is actually a "code of conduct"-ish list of rules from **VRC K-Mart**. As far as i am aware, however, that he is some K-Mart nerd of some kind, maybe the developer of the advanced version of **TWCRundown** is ~~getting along with Wyatt White~~.
+
 
 
 > [!IMPORTANT]
