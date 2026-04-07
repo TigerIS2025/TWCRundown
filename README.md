@@ -30,7 +30,7 @@ If backticks are absoluteley necessary, do the following:
 
 
 
-In fact, if you want to add a block, add a ``#`` and type anything uppercase like:
+If you want to add a block, add a ``#`` and type anything uppercase like:
 
 ```
 '#THIS IS A TEST',
@@ -48,7 +48,6 @@ Download the files from the [Releases Page.](https://github.com/TigerIS12024/TWC
 See the advanced version [here.](https://github.com/demonitize/TWCRundown)
 
 
-I want to thank TwistedWX for downloading this.
 
 > [!IMPORTANT]
 > If you have any issues with this project, go to the "Issues' tab and report it, and i will get back to you as soon as i can.
