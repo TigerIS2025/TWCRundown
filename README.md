@@ -54,5 +54,6 @@ Credit and special thanks goes to demonitize to fork this repository for making 
 
 
 > [!IMPORTANT]
-> If you have any issues with this project, go to the "Issues' tab and report it, and i will get back to you as soon as i can.
+> If you have any issues with this project, go to the "Issues' tab and report it, and i will get back to you as soon as i can. (Note: I **DID NOT** write this code.)
+
 
